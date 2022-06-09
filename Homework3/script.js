@@ -1,7 +1,7 @@
 "Use strict";
 
-let num = +prompt("Введите число", "");
-let result = 0,
+let num = +prompt("Введите число", ""),
+    result = 0,
     powValue = 0;
 
 if(typeof (num) !== 'number' || num < 0 || !Number.isInteger(num)) {
@@ -9,9 +9,7 @@ if(typeof (num) !== 'number' || num < 0 || !Number.isInteger(num)) {
 } else {
     for(let i = 0; i <= num; i++) {
         powValue = Math.pow(i , 2);
-            if(powValue > 0) {
-                result += powValue;
-            }
+        result += powValue;
     }
     console.log(result);
 }
@@ -46,7 +44,91 @@ console.log(sumArray2);
 
 //----------------------------------------------------------------------
 
-let myObj = (key, value, obj) => {
-    obj[key] = value;
-};
+let myObj1 = {
+    name: "Roman",
+    Surname: "Budai",
+    },
+    myObj2 = {
+    country: "Ukraine",
+    city: "Kharkov",
+},
 
+key = prompt('Введите ключ обьекта:', ''),
+value = prompt('Введите значение обьекта:', '');
+
+function setObjProperties (key, value, obj) {
+    for (let i in obj) {
+        if (i === key) {
+        console.log("Уже есть");
+        } else {
+        obj[key] = value;
+        }
+    }
+    console.log(obj);
+}   
+
+setObjProperties(key, value, myObj1);
+
+//----------------------------------------------------------------------
+
+let count = 0;
+
+while (count < 10) {
+    count ++;
+    if (count % 3 == 0) {
+        console.log("FizBuz");
+        continue;
+    }
+
+    if (count % 2 === 0) {
+        console.log("Fiz");
+        continue;
+    }
+
+    if(count % 2 !== 0) {
+        console.log("Buz");
+        continue;
+    }
+}
+
+//----------------------------------------------------------------------
+
+function factorial(valueFactorial) {
+    let resultFactorial = 1;
+    while(valueFactorial) {
+        resultFactorial *= valueFactorial --;
+    }
+    console.log(resultFactorial);
+    return;
+}   
+
+factorial(7); 
+
+//----------------------------------------------------------------------
+
+const sheetsInReamPaper = 500,
+      consumptionPerWeek = 1200,
+      weeksAmount = 8;
+let boxResult = 0,
+    boxResultCeil = 0,
+    boxResultFloat = 0;
+
+boxResultFloat = consumptionPerWeek / sheetsInReamPaper * weeksAmount;
+
+if(boxResultFloat % 2 === 0) {
+    boxResult = boxResultFloat;
+} else {
+    boxResultCeil = boxResultFloat.toString().split(".")[0];
+    boxResult = Number(boxResultCeil) + 1;
+}
+
+console.log(boxResult);
+
+// let sumSheetsPerWeek = consumptionPerWeek / sheetsInReamPaper; 
+// console.log(sumSheetsPerWeek);
+
+// for(let i =1; i <= 8; i++) {
+//     if(boxResult % 2) {
+//         boxResult += sumSheetsPerWeek;
+//     }
+// }
