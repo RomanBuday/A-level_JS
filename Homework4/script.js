@@ -85,9 +85,11 @@ console.log(arrayObj);
 //----------------------------------------------------------------------------
 
 function getCity() {
+    let arr = [];
     for (const [key, value] of Object.entries(citiesAndCountries)) {
-        console.log(`"${key} это - ${value},"`); 
+        arr.push(`${key} это - ${value}`);
     }
+    return arr;
 }
 
 const citiesAndCountries = {
@@ -101,7 +103,7 @@ const citiesAndCountries = {
 };
 
 const result = getCity();
-
+console.log(result);
 //---------------------------------------------------------------------------------
 
 const namesOfDays = {
