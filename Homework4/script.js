@@ -36,6 +36,26 @@ function expo(...theArgs) {
 
 //-------------------------------------------------------------
 
+const objectA = {
+    a: 1,
+    b: 2,
+    c: 3,
+};
+
+let funcSum =  fn.bind(objectA);
+
+function fn() {
+    let out = 0;
+    Object.values(this).forEach((item)=> {
+        if(item > 0) {
+            out += item;
+        }
+    });
+    console.log(out);
+}
+
+funcSum();
+
 // function funcSum () {
 //     let sum = 0;
 //     for(let key in objectA) {
@@ -45,36 +65,6 @@ function expo(...theArgs) {
 // }
 
 // funcSum(objectA);
-
-const objectA = {
-    a: 1,
-    b: 2,
-    c: 3,
-};
-
-            // let funcSum =  fn.bind(objectA);
-
-            // function fn() {
-            //     let out = 0;
-            //     Object.values(this).forEach((item)=> {
-            //         if(item > 0) {
-            //             out += item;
-            //         }
-            //     });
-            //     console.log(out);
-            // }
-
-            // funcSum();
-
-function funcSum () {
-    let sum = 0;
-    for(let key in objectA) {
-        sum += objectA[key];
-    }
-    console.log(sum);
-}
-
-funcSum(objectA);
 
 //----------------------------------------------------------
 
