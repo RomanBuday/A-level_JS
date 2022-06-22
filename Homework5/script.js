@@ -52,10 +52,10 @@ holderDiv.style.borderRadius = "20px 20px 0 0";
 holderDiv.style.flexWrap = "Wrap";
 
 
-var item1 = document.createElement("div");
-var itemText = document.createTextNode("1");
-item1.appendChild(itemText);
-item1.className = 'item';
+let item1 = document.createElement("div");
+let itemText1 = document.createTextNode("1");
+item1.appendChild(itemText1);
+item1.classList = 'item';
 holderDiv.appendChild(item1);
 item1.style.flexDirection = "column";
 item1.style.justifyContent = "center";
@@ -67,10 +67,10 @@ item1.style.borderTopLeftRadius = "15px";
 item1.style.flexGrow = "2";
 
 
-var item2 = document.createElement("div");
-var itemText = document.createTextNode("2");
-item2.appendChild(itemText);
-item2.className = 'item';
+let item2 = document.createElement("div");
+let itemText2 = document.createTextNode("2");
+item2.appendChild(itemText2);
+item2.classList = 'item';
 holderDiv.appendChild(item2);
 item2.style.flexDirection = "column";
 item2.style.justifyContent = "center";
@@ -81,10 +81,10 @@ item2.style.order = "2";
 item2.style.flexGrow = "1";
 
 
-var item3 = document.createElement("div");
-var itemText = document.createTextNode("3");
-item3.appendChild(itemText);
-item3.className = 'item';
+let item3 = document.createElement("div");
+let itemText3 = document.createTextNode("3");
+item3.appendChild(itemText3);
+item3.classList = 'item';
 holderDiv.appendChild(item3);
 item3.style.flexDirection = "column";
 item3.style.justifyContent = "center";
@@ -95,10 +95,10 @@ item3.style.backgroundColor = "#00f";
 item3.style.flexGrow = "1";
 
 
-var item4 = document.createElement("div");
-var itemText = document.createTextNode("4");
-item4.appendChild(itemText);
-item4.className = 'item';
+let item4 = document.createElement("div");
+let itemText4 = document.createTextNode("4");
+item4.appendChild(itemText4);
+item4.classList = 'item';
 holderDiv.appendChild(item4);
 item4.style.flexDirection = "column";
 item4.style.justifyContent = "center";
@@ -109,10 +109,10 @@ item4.style.backgroundColor = "#0f0";
 item4.style.flexGrow = "1";
 
 
-var item5 = document.createElement("div");
-var itemText = document.createTextNode("5");
-item5.appendChild(itemText);
-item5.className = 'item';
+let item5 = document.createElement("div");
+let itemText5 = document.createTextNode("5");
+item5.appendChild(itemText5);
+item5.classList = 'item';
 holderDiv.appendChild(item5);
 item5.style.flexDirection = "column";
 item5.style.justifyContent = "center";
