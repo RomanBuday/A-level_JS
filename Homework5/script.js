@@ -24,25 +24,22 @@ const obj = {
     e: 0,
 };
 
-obj.getKeySum = function() {
-    let out = 0;
-    Object.values(this).forEach((item)=> {
-        if(item == true) {
-            out += item;
-        }
-    });
-    console.log(out);
+Object.prototype.getKey = function() {
+    if(Object.values(this)) {
+        return Object.values(this).reduce((acc, item)=> acc + item);
+    }       
 };
 
-obj.reverseKey = function() {
+Object.prototype.reversKey = function() {
     const result = {};
-    Object.entries(obj).forEach(([key, value]) => {
+    Object.entries(this).forEach(([key, value]) => {
       result[value] = key;
     });
+    return result;
 };
 
-console.log(obj.getKeySum());
-console.log(obj.reverseKey());
+console.log(obj.getKey());
+console.log(obj.reversKey());
 
 
 //---------------------------------------------------------
