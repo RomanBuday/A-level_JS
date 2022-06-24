@@ -122,3 +122,15 @@ item5.style.backgroundColor = "#ffa500";
 item5.style.width = "50%";
 item5.style.borderTopRightRadius = "15px";
 item5.style.flexGrow = "2";
+
+function createDivHelper(text) {
+    const div = document.createElement("div");
+    div.innerText = text;
+    div.classList.add('item');
+    return div;
+}
+
+const div1 = createDivHelper("item6");
+const div2 = createDivHelper('item7');
+
+document.body.append(div1,div2);

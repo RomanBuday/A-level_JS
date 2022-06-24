@@ -1,0 +1,24 @@
+p {
+    background-color: cadetblue;
+    width: fit-content;
+    padding: 10px 10px;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+img {
+    display: block;
+}
+
+button {
+    margin-left: 10px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+.wrapper {
+    margin: 20px 20px;
+}

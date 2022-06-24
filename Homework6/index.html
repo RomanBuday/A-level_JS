@@ -8,6 +8,37 @@
     <title>Homework6</title>
 </head>
 <body>
+    <div class="holder">
+        <div>
+            <a href="https://www.google.com/" title="">Текст первой ссылки</a>
+        </div>
+
+        <div>
+            <a href="https://www.apple.com/" title="">Текст второй ссылки</a>
+        </div>
+
+        <div>
+            <a href="https://www.youtube.com/" title="">Текст третьей ссылки</a>
+        </div>
+
+        <div class="wrapper">
+            <button onclick="logDataAttr(event)">First</button>
+            <button onclick="logDataAttr(event)" data-number="1">Second</button>
+            <button onclick="logDataAttr(event)" data-item="0" data-test="parapragh" data-color="red">Third</button>
+        </div>
+    </div>
+
+    <!-- <form action="">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" required>
+        <label for="age">Введите возраст</label>
+        <input type="text" name="age" id="age" min="0">
+        <label for="agree">Я согласен с условиями использования</label>
+        <input type="checkbox" name="agree" id="agree" disabled>
+    
+        <button type="submit">Отправить</button>
+    </form> -->
+
     <script src="script.js"></script>
 </body>
 </html>
