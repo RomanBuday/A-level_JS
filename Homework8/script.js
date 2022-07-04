@@ -2,13 +2,14 @@
 
 let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8],
     area =  document.querySelector(".area"),
-    reset = document.querySelector(".reset"),
-    fields = document.querySelectorAll(".field");
+    reset = document.querySelector(".reset");
 
 
 for (let i = 0; i < 9; i++) {
     area.innerHTML += '<div class="field"></div>';
 }     
+
+let fields = document.querySelectorAll(".field");
 
 for(let i = 0; i < fields.length; i++) {
     fields[i].index = i;
