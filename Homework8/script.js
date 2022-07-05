@@ -11,22 +11,22 @@ for (let i = 0; i < 9; i++) {
 
 let fields = document.querySelectorAll(".field");
 
-for(let i = 0; i < fields.length; i++) {
-    fields[i].index = i;
-    fields[i].addEventListener('click', function(event) {
-    fields[event.target.index].innerHTML = 'X';
-    delete arr[(arr.indexOf(event.target.index))];
-
-    function compareRandom(a, b) {
-        return Math.random() - 0.5;
+function start() {  
+    for (let i = 0; i < fields.length; i++) {
+        fields[i].index = i;
+        fields[i].addEventListener('click', function() {
+            if (i % 2 == 0) {
+                this.innerHTML = 'X';
+            } else {
+                this.innerHTML = '0';
+            }
+            i++;
+            checkWin();
+        });         
     }
-
-    arr.sort(compareRandom);
-    fields[arr[0]].innerHTML = 'O';
-    checkWin();
-    arr.shift();     
-    });      
 }
+    
+start(); 
 
 function checkWin() {
     const winArr = [
@@ -48,6 +48,8 @@ function checkWin() {
             fields[win[0]].innerHTML != '') 
             {
             alert(fields[win[0]].innerHTML + ' WIN!');
+        } else if(j == 8) {
+            alert('Pare!');
         }
     }
 } 
