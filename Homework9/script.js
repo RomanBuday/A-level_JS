@@ -58,6 +58,21 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
+
+    function addStorage(id) {
+        arr.push(id);
+        localStorage.setItem('ID', arr);
+        getStorageData();
+    }
+
+    function getStorageData() {
+        if(localStorage.getItem('ID')) {
+            document.querySelector('.card__title span').textContent = localStorage.getItem('ID');
+        } else {
+            document.querySelector('.card__title span').textContent = 0;
+        }
+        clearStorage();
+    } 
     
     getStorageData();
   
