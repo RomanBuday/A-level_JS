@@ -1,7 +1,7 @@
 "Use strict";
 
 document.addEventListener('DOMContentLoaded', function () {
-    const app = document.querySelector('#App');
+    const store = document.querySelector('#store');
     const arr = [];
     const getUrl = 'https://api.punkapi.com/v2/beers?brewed_before=11-2017&abv_gt=6';
 
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function generateTabs(img, title, descr, id, abv, ph) {
-        app.insertAdjacentHTML('beforeend', createTab(img, title, descr, id, abv, ph)); 
+        store.insertAdjacentHTML('beforeend', createTab(img, title, descr, id, abv, ph)); 
     }
   
     function selectId(){
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <input class="card__clear" type="button" value="Clear">
             </div>
         `;
-        app.insertAdjacentHTML('beforeend', html); 
+        store.insertAdjacentHTML('beforeend', html); 
     }
 
     function clearStorage(){

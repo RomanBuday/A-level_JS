@@ -19,13 +19,12 @@ li {
     --btn-color: #00BDFE
 }
   
-#App {
+#store {
     position: relative;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     padding-top: 60px;
-    /* background-color: var(--app-bg); */
     font-family: var( --font-family);
     height: 100vh;
 }
