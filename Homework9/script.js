@@ -50,22 +50,22 @@ document.addEventListener('DOMContentLoaded', function () {
         store.insertAdjacentHTML('beforeend', createTab(img, title, descr, id, abv, ph)); 
     }
   
-    function selectId(){
+    function selectId() {
         document.querySelectorAll('.wrapper__bottom_btn').forEach(el => {
-            el.addEventListener('click', ()=> {
+            el.addEventListener('click', () => {
             console.log(el.parentElement.id);
             addStorage(el.parentElement.id);
             });
         });
     }
 
-    function addStorage(id){
+    function addStorage(id) {
         arr.push(id);
         localStorage.setItem('ID', arr);
         getStorageData();
     }
 
-    function getStorageData(){
+    function getStorageData() {
         if(localStorage.getItem('ID')) {
             document.querySelector('.card__title span').textContent = localStorage.getItem('ID');
         } else {
@@ -76,18 +76,18 @@ document.addEventListener('DOMContentLoaded', function () {
     
     getStorageData();
   
-    function createCart(){
-        const html =  `
+    function createCart() {
+        const addHtml = `
             <div class="card">
                 <h2 class="card__title">Your selected items <span></span></h2>
                 <input class="card__clear" type="button" value="Clear">
             </div>
         `;
-        store.insertAdjacentHTML('beforeend', html); 
+        store.insertAdjacentHTML('beforeend', addHtml); 
     }
 
-    function clearStorage(){
-        document.querySelector('.card__clear').addEventListener('click', ()=> {
+    function clearStorage() {
+        document.querySelector('.card__clear').addEventListener('click', () => {
             localStorage.removeItem('ID');
             getStorageData();
         });
