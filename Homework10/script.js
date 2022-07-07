@@ -24,15 +24,20 @@ let dateBtn = document.querySelector(".date__btn"),
 
 dateBtn.addEventListener('click', function() {
 	let userAnswer = dateBirth.value.split('-');
-	let userDate = {
-		year : userAnswer[0],
-		month : userAnswer[1],
-		date : userAnswer[2]
-	};
 
-	document.cookie = 'month=' + userDate.month;
-	document.cookie = 'date=' + userDate.date;
-    document.cookie = 'year=' + userDate.year;
+    if(document.cookie == true) {
+        dateBirth.style.display = "none";
+    } else {
+        let userDate = {
+            year : userAnswer[0],
+            month : userAnswer[1],
+            date : userAnswer[2]
+        };
+    
+        document.cookie = 'month=' + userDate.month;
+        document.cookie = 'date=' + userDate.date;
+        document.cookie = 'year=' + userDate.year;
+    }
 });
 
 function getCookie(name) {
@@ -52,8 +57,8 @@ function countdownTimer() {
         clearInterval(timerId);
     }
 
-    let month = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24 / 12) % 12 :0,
-        days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) : 0,
+    let month = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 12 : 0,
+        days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) % 31 : 0,
         hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0,
         minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0,
         seconds = diff > 0 ? Math.floor(diff / 1000) % 60 : 0;
@@ -84,8 +89,6 @@ if (txtToStorage) {
 txtArea.oninput = () => {
 	localStorage.setItem("txtArea",txtArea.value);
 };
-
-let area = localStorage.setItem("text", txtArea);
 
 //-----------------------------------------------------------------
 
