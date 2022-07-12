@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+:root {
+  --content-width: 1240px;
+  --container-offset: 15px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  --font-family: "Roboto", sans-serif;
+  --bg-color: #fff;
+  --app-bg: #ddd;
+  --border-img: #9500E0;
+  --btn-color: #00BDFE
+}
+
+.container__search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 16px var(--container-offset);
+  max-width: var(--container-width);
+  background: #24292F;
+}  
+
+.search__header {
+  color: var(--bg-color);
+  font-size: 30px;
+}
+
+.search__header > span {
+  font-weight: 200;
+}
+
+.search__descr {
+  color: var(--bg-color);
+  font-size: 18px;
+}
+
+.text-field__group {
+  display: flex;
+}
+
+.search__btn {
+  display: inline-block; 
+  line-height: 1.5;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+}
+
+.search__btn:hover {
+  background-color: #bdbdbd;
+}
+
+.search__input {
+  padding: 10px;
+}
+
+.text-field__group .search__input {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.text-field__group .search__btn {
+  position: relative;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left-width: 0;
+}
+
+.tab__container {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.tab__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  margin-bottom: 25px;  
+  padding: 20px;
+  background-color: #eeeeee;
+  border-radius: 10px;
+  box-shadow: 8px -5px 15px -1px #24292f;
+}
+
+.tab__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.info__login {
+  font-size: 24px;
+}
+
+.info__list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-size: 16px;
+}
+
+.info__list li {
+  margin-bottom: 10px;
+}
+
+.info__list li span {
+  margin-right: 5px;
+}
+
+
+

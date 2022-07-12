@@ -10,19 +10,18 @@
 
 <body>
     <div class="login__container">
-        <input class = "user__name" type="text" placeholder="Enter your name">
-        <input class = "user__age" type="number" placeholder="Enter your age">
+        <input class = "login__input user__name" type="text" placeholder="Enter your name">
+        <input class = "login__input user__age" type="number" data-min="1" placeholder="Enter your age">
         <button class="login__btn">Login</button>
     </div>
 
     <div class="date__container">
-        <input class = "user__date-birth" type="date">
-        <span class="date__counter"></span>
-        <button class= "date__btn">Enter date</button>
+        <input class = "login__input user__date-birth" type="date">
     </div>
+    
 
     <div class="textarea__container">
-        <textarea name="textarea" class="text__area" cols="30" rows="10"></textarea>
+        <textarea name="textarea" placeholder="Enter text" class="text__area" cols="30" rows="10"></textarea>
     </div>
 
     <script src="script.js"></script>
