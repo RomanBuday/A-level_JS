@@ -1,61 +1,79 @@
 "Use strict";
 
-// class ITCompany {
-//   create (jobType) {
-//     let employee;
-//     if (jobType === 'Programmer') {
-//       return new Programmer(jobType);
-//     } else if (jobType === 'Tester') {
-//       return new Tester(jobType);
-//     } 
-//     employee.type = jobType;
-//     employee.say = function () {
-//       console.log(`${this.jobType}`);
-//     };
-//     return employee;
-//   }
-// }
+class ITCompany {
+  create (name, age, typeJob) {
+    if(typeJob == 'Programmer') {
+      return new Programmer(name, age);
+    }
 
-// class Human {
-//   constructor (name, age) {
-//     this.name = name;
-//     this.age = age;
-//   }
-//   getName() {
-//     console.log(`My name is ${this.name}`);
-//   }
-//   getAge() {
-//     console.log(`My age is ${this.age}`);
-//   }
+    if(typeJob == 'Tester') {
+      return new Tester(name, age);
+    }
+  }
+}
 
-//   describe() {
-//     console.log(`Hi, My name is ${this.name}, I'm ${this.age}, and I ${this.job}`);
-//   }
-// }
+class Human {
+  constructor (name, age) {
+    this.name = name;
+    this.age = age;
+  }
 
-// class Programmer extends Human {
-//   constructor () {
-//     this.job = 'Programmer';
-//     super(name, age);
-//   }
-// }
+  getName() {
+    console.log('My name is' `${this.name}`);
+  }
 
-// class Tester extends Human {
-//   constructor () {
-//     this.job = 'Tester';  
-//     super(name, age);
-//   }
-// }
+  getAge() {
+    console.log('My age is' `${this.age}`);
+  }
 
-// const testing = () => {
-//   const employees = [];
-//   const factory = new ITCompany();
-//   employees.push(factory.create('Programmer', 'Roman', 36));
-//   employees.push(factory.create('Tester', 'Stas', 28));
-//   employees.forEach((employee) => employee.describe());
-// };
+  static getType() {
+    return 'Human';
+  }
+}
 
-// testing();
+class Programmer extends Human {
+  constructor (name, age) {
+    this.job = 'Programmer';
+    super(name, age);
+  }
+
+  static getJob() {
+    return this.job;
+  }
+}
+
+class Tester extends Human {
+  constructor (name, age) {
+    this.job = 'Tester';  
+    super(name, age);
+  }
+  static getJob() {
+    return this.job;
+  }
+}
+
+Programmer.prototype.getProgrammerName = function() {
+  return `${this.name}`;
+};
+
+Tester.prototype.getProgrammerName = function() {
+  return `${this.name}`;
+};
+
+const testing = () => {
+  const userCompany = new ITCompany();
+
+  const job = Tester.getJob();
+  console.log(job);
+
+  const user1 = userCompany.create("Roman", 36, 'Programmer');
+  console.log(user1);
+
+  const programmer1 = new Programmer("Roman", 36);
+  programmer1.getAge();
+};
+
+testing();
 
 
 //----------------------------------------------------------
@@ -69,8 +87,9 @@ const obj = {
 };
 
 function freezeVowelKeys(obj) {
+  let vowel = /[aeiou]/i;
   for (const key of Object.keys(obj)) {
-    if (/[aeiou]/i.test(key)) {
+    if (key.match(vowel)) {
       Object.defineProperty(obj, key, {
         writable: false, 
       });
