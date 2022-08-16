@@ -8,7 +8,7 @@ class Circle extends DOM {
     }
     spawnCircle() {
         this.div = document.createElement("div");
-        this.dom.append(this.div);
+        this.content.append(this.div);
         this.div.style.width = `${this.width}px`;
         this.div.style.height = `${this.height}px`;
         this.div.style.backgroundColor = "red";

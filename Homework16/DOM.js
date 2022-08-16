@@ -1,5 +1,3 @@
-"Use strict";
-
 export class DOM {
     constructor() {
         this.content = document.body;
