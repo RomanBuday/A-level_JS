@@ -19,11 +19,11 @@ class Human {
   }
 
   getName() {
-    console.log('My name is' `${this.name}`);
+    console.log("My name is" `${this.name}`);
   }
 
   getAge() {
-    console.log('My age is' `${this.age}`);
+    console.log(`My age is ${this.age}`);
   }
 
   static getType() {
@@ -33,8 +33,8 @@ class Human {
 
 class Programmer extends Human {
   constructor (name, age) {
-    this.job = 'Programmer';
     super(name, age);
+    this.job = 'Programmer';
   }
 
   static getJob() {
@@ -44,8 +44,8 @@ class Programmer extends Human {
 
 class Tester extends Human {
   constructor (name, age) {
-    this.job = 'Tester';  
     super(name, age);
+    this.job = 'Tester';  
   }
   static getJob() {
     return this.job;
